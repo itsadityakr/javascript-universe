@@ -156,6 +156,7 @@ Example - HTML Code. ⬇️
 
 <img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/html_doc_code.png" alt="HTML Code" width="500">
 
+---
 
 Example - Document WebPage. ⬇️
 
