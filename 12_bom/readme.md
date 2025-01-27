@@ -6,6 +6,8 @@ The **Browser Object Model (BOM)** provides the means for JavaScript to interact
 
 **BOM (Browser Object Model)** and **DOM (Document Object Model)** are closely associated with the **`window` object**, but they are not technically subparts of it. Instead, the `window` object acts as the global object in the browser, and it encompasses both the **DOM** and **BOM**. Here’s how they relate:
 
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(1).png" alt="Browser Manipulation" width="500">
+
 ### 1. **`window` Object**:
 - The `window` object is the global object in the browser. It represents the entire browser window and provides access to the browser's features and functionality. It is the root object that holds references to the BOM and DOM.
 - Almost everything that you interact with in JavaScript when working with the browser environment is accessed through the `window` object.
