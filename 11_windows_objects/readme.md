@@ -152,6 +152,29 @@ The `screen` property provides information about the user's screen:
 
 ---
 
+Example - HTML Code. ⬇️
+
+![HTML Code](https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/html_doc_code.png)
+
+Example - Document WebPage. ⬇️
+
+![HTML Document](https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/html_doc.png)
+
+---
+
+Representation of the window object in JavaScript, typically found in web browsers' developer tools or during debugging. The window object is a global object in web browsers that provides an interface to the browser's window, allowing access to various browser-related features and APIs. ⬇️
+
+
+![Window Object](https://raw.githubusercontent.com/itsadityakr/javascript-universe/718357fbb51ed1a7d5355dc904db8c288bb5192b/%CE%A9_assets/images/window.png)
+
+---
+This is a representation of the window.history object in JavaScript, which is part of the browser's History API. It allows you to interact with the browser's session history — a record of the pages visited during the current browser session. ⬇️
+![Window Object and Methods](https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/window_objects.png)
+---
+This is an example of JavaScript code execution and its output in the browser's developer console. It demonstrates the usage of various window and document object methods and properties for interacting with the webpage and its content. ⬇️
+![Window Object Properties](https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/window_object_properties.png)
+
+---
 ## 4. Example Code
 
 ```javascript
