@@ -10,6 +10,28 @@ Each HTML element becomes a **node** in the DOM, and these nodes are organized h
 Think of the DOM like a **map** or a **blueprint** for the webpage, and JavaScript as the **tool** that allows you to interact with and change that map.
 
 ---
+### **DOM Tree**
+
+On the picture above, you can click on element nodes and their children will open/collapse.
+
+Every tree node is an object.
+
+Tags are element nodes (or just elements) and form the tree structure: <html> is at the root, then <head> and <body> are its children, etc.
+
+The text inside elements forms text nodes, labelled as #text. A text node contains only a string. It may not have children and is always a leaf of the tree.
+
+For instance, the <title> tag has the text "About elk".
+
+Please note the special characters in text nodes:
+
+a newline: ↵ (in JavaScript known as \n)
+a space: ␣
+Spaces and newlines are totally valid characters, like letters and digits. They form text nodes and become a part of the DOM. So, for instance, in the example above the <head> tag contains some spaces before <title>, and that text becomes a #text node (it contains a newline and some spaces only).
+
+There are only two top-level exclusions:
+
+Spaces and newlines before <head> are ignored for historical reasons.
+If we put something after </body>, then that is automatically moved inside the body, at the end, as the HTML spec requires that all content must be inside <body>. So there can’t be any spaces after </body>.
 
 ### **How Does the DOM Work?**
 
