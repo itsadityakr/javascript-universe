@@ -172,6 +172,7 @@ Representation of the window object in JavaScript, typically found in web browse
 This is a representation of the window.history object in JavaScript, which is part of the browser's History API. It allows you to interact with the browser's session history — a record of the pages visited during the current browser session. ⬇️
 
 <img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/window_object_properties.png" alt="Window Object Properties" width="500">
+
 ---
 
 This is an example of JavaScript code execution and its output in the browser's developer console. It demonstrates the usage of various window and document object methods and properties for interacting with the webpage and its content. ⬇️
