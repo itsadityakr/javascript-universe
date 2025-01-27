@@ -10,32 +10,72 @@ Each HTML element becomes a **node** in the DOM, and these nodes are organized h
 Think of the DOM like a **map** or a **blueprint** for the webpage, and JavaScript as the **tool** that allows you to interact with and change that map.
 
 ---
-### **DOM Tree**
 
-On the picture above, you can click on element nodes and their children will open/collapse.
+### **DOM Tree Overview**
 
-Every tree node is an object.
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(15).png" alt="DOM Tree Visualization" width="500">
 
-Tags are element nodes (or just elements) and form the tree structure: <html> is at the root, then <head> and <body> are its children, etc.
+The DOM (Document Object Model) represents the structure of an HTML document as a tree-like hierarchy. Here's how it works:
 
-The text inside elements forms text nodes, labelled as #text. A text node contains only a string. It may not have children and is always a leaf of the tree.
+- **Element Nodes (Tags):**  
+  Tags like `<html>`, `<head>`, `<body>` are element nodes. They form the structure of the tree, where `<html>` is the root node, and its children are `<head>` and `<body>`.
 
-For instance, the <title> tag has the text "About elk".
+- **Text Nodes:**  
+  The content inside elements (like text) is represented as text nodes, labeled as `#text`.  
+  - A text node contains only a string.  
+  - Text nodes cannot have children and are always leaves of the tree.  
+  - Example: The `<title>` tag contains the text "About elk", which forms a `#text` node.
 
-Please note the special characters in text nodes:
+---
 
-a newline: ↵ (in JavaScript known as \n)
-a space: ␣
-Spaces and newlines are totally valid characters, like letters and digits. They form text nodes and become a part of the DOM. So, for instance, in the example above the <head> tag contains some spaces before <title>, and that text becomes a #text node (it contains a newline and some spaces only).
+### **Special Characters in Text Nodes**
 
-There are only two top-level exclusions:
+Text nodes may include special characters:
+- **Newline (↵):** Represented in JavaScript as `\n`.
+- **Space (␣):** Spaces are valid characters and part of the DOM.  
 
-Spaces and newlines before <head> are ignored for historical reasons.
-If we put something after </body>, then that is automatically moved inside the body, at the end, as the HTML spec requires that all content must be inside <body>. So there can’t be any spaces after </body>.
+Example:
+```html
+<head>
+    <title>About elk</title>
+</head>
+```
+- The `<head>` tag contains spaces and newlines before `<title>`, and these become `#text` nodes.
+
+---
+
+### **Important Notes:**
+
+1. **Spaces/Newlines Before `<head>`:**  
+   - These are ignored for historical reasons and do not become `#text` nodes.
+
+2. **Content After `</body>`:**  
+   - If anything is placed after `</body>`, it is automatically moved inside the `<body>` element at the end.  
+   - This is because the HTML specification requires all content to be inside `<body>`.
+
+---
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(16).png" alt="DOM Node Types" width="500">
+
+---
 
 ### **How Does the DOM Work?**
 
-When a web browser loads an HTML document, it reads the HTML code and builds the DOM. This process converts the HTML code into an interactive structure that can be manipulated by JavaScript.
+The DOM is built by the browser as it processes an HTML document. Here’s how it works:
+
+1. **HTML Parsing:**  
+   - The browser reads the HTML code from top to bottom.
+
+2. **Building the DOM Tree:**  
+   - The browser converts the HTML code into a tree-like structure of objects (the DOM).
+   - Each HTML element becomes an element node.
+   - Text within elements becomes text nodes.
+
+3. **Interactive Structure:**  
+   - The DOM is now interactive and can be accessed and manipulated using JavaScript.
+
+---
+
 
 #### **For example:**
 If you have this simple HTML:
@@ -66,6 +106,207 @@ Document
 ```
 
 The **Document** is the root of the DOM, and it contains two child nodes: **html** and **body**. Each of these nodes can have their own children, and those children can be other elements or text.
+
+---
+
+### **HTML Code Example** ⬇️
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(39).png" alt="" width="500">
+
+This is an example of embedding an image into an HTML page. The `<img>` tag specifies the source of the image (`src`), alternate text (`alt`), and the width of the image.
+
+---
+
+### **WebPage - Document 1** ⬇️
+Preview of a webpage structure:
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(38).png" alt="" width="500">
+
+This is the visual representation of the webpage rendered in the browser. It shows how HTML elements are styled and laid out.
+
+---
+
+### **Console Logs and Definitions** ⬇️
+
+#### **1. `document`**
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(37).png" alt="" width="500">
+
+ 
+The `document` object is the root of the HTML document and represents the entire webpage. It allows access to and manipulation of all elements on the page.
+ 
+Logging `document` in the console outputs the entire DOM (Document Object Model), which is the structured representation of the HTML content.
+
+---
+
+#### **2. `document.body`** ⬇️
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(36).png" alt="" width="500">
+
+`document.body` refers to the `<body>` element of the webpage. The `<body>` contains the main content of the HTML document.
+
+When logged, it outputs the entire `<body>` section of the document, including all child elements.
+
+---
+
+#### **3. `document.body.childNodes`** ⬇️
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(33).png" alt="" width="500">
+
+
+`childNodes` is a property of a DOM element that returns a live NodeList of all child nodes, including text nodes, element nodes, and comments.
+
+Logging `document.body.childNodes` lists all child nodes of the `<body>`. These include not just HTML tags but also whitespace or text nodes.
+
+---
+
+#### **4. `document.body.children`** ⬇️
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(34).png" alt="" width="500">
+
+`children` is a property that returns an HTMLCollection of only the element nodes (excluding text or comment nodes) that are direct children.
+
+It outputs a collection of the child elements under `<body>` without including text or comment nodes.
+
+---
+
+#### **5. `document.body.firstChild` and `document.body.firstElementChild`** ⬇️
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(35).png" alt="" width="500">
+
+- `firstChild`: Returns the first child node (including text and comments).
+- `firstElementChild`: Returns the first child that is an element node.
+
+- `firstChild` could return a text node (e.g., whitespace).
+- `firstElementChild` ensures the returned node is an actual HTML element.
+
+---
+
+#### **6. `document.body.sibling` and `document.body.parent`** ⬇️
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(29).png" alt="" width="500">
+
+
+- `sibling`: Accesses the next or previous sibling of an element in the DOM.
+- `parent`: Refers to the parent node of the element.
+
+You can traverse up (`parentNode`) or sideways (`nextSibling` / `previousSibling`) in the DOM tree.
+
+---
+
+### **Class, ID, Tag, and Query Selectors** ⬇️
+
+---
+
+#### **WebPage - Document 2**
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(28).png" alt="" width="500">
+
+The page has various HTML elements with classes, IDs, and tags that you can target using JavaScript DOM methods.
+
+---
+
+### **Iterators and Search**
+
+#### **Search by Class Name** ⬇️
+
+**Code Example:**  
+```javascript
+for (let elem of document.getElementsByClassName("list-of--nodes")) {
+   console.log(elem.innerHTML);
+}
+```
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(17).png" alt="" width="500">
+ 
+`getElementsByClassName()` retrieves a live collection of elements with a specific class.
+
+Iterates over all elements with the class `list-of--nodes` and logs their HTML content (`innerHTML`).
+
+---
+
+**With `innerText`:**   ⬇️
+```javascript
+for (let elem of document.getElementsByClassName("list-of--nodes")) {
+   console.log(elem.innerText);
+}
+```
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(18).png" alt="" width="500">
+
+`innerText` retrieves the text inside an element, excluding hidden elements and preserving formatting.
+
+Outputs the visible text inside the elements.
+
+---
+
+**With `textContent`:**   ⬇️
+```javascript
+for (let elem of document.getElementsByClassName("list-of--nodes")) {
+   console.log(elem.textContent);
+}
+```
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(19).png" alt="" width="500">
+  
+`textContent` retrieves the text inside an element, including hidden elements but without formatting.
+
+---
+
+#### **Search by Tag Name** ⬇️
+
+```javascript
+for (let elem of document.getElementsByTagName("list")) {
+   console.log(elem);
+}
+```
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(20).png" alt="" width="500">
+
+
+`getElementsByTagName()` retrieves a collection of elements by tag name.
+
+Iterates through all `<list>` tags and logs them.
+
+---
+
+### **Query Selectors**
+
+#### **Targeting by ID** ⬇️
+```javascript
+document.querySelector("#heading");
+```
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(21).png" alt="" width="500">
+
+`querySelector()` selects the first matching element using CSS selectors.
+
+---
+
+#### **Modifying Content** ⬇️
+```javascript
+document.querySelector("#heading").innerHTML = "World";
+```
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(22).png" alt="" width="500">
+
+
+Changes the content of the element with the ID `heading` to "World."
+
+---
+
+#### **Querying Multiple Elements** ⬇️
+```javascript
+document.querySelectorAll("li");
+```
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(24).png" alt="" width="500">
+  
+`querySelectorAll()` retrieves all matching elements as a NodeList.
+
+---
+
+### **InnerText, InnerHTML, TextContent** ⬇️
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(26).png" alt="" width="500">
+
+#### **Differences and Behavior**
+
+- **`innerHTML`**: Includes HTML tags and structures within an element.
+- **`innerText`**: Retrieves the text as it is displayed to the user, excluding hidden content.
+- **`textContent`**: Retrieves all text, including hidden content, but excludes tags.
 
 ---
 
