@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn DOM Concepts Visually</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f0f4f8;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .demo-box {
+            border: 2px solid #4a5568;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .highlight {
+            background: #ebf8ff;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        button {
+            background: #4299e1;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #3182ce;
+        }
+        .output {
+            background: #2d3748;
+            color: #a0aec0;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .tree-view {
+            border-left: 2px solid #4a5568;
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        .tree-item {
+            margin: 5px 0;
+            padding: 5px;
+        }
+        .tree-item:hover {
+            background: #ebf8ff;
+        }
+        .list-of--nodes {
+            color: #2d3748;
+            margin: 5px 0;
+        }
+        .content-demo {
+            border: 1px solid #4a5568;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .hidden-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="heading">Learn DOM (Document Object Model) Visually</h1>
+        
+        <div class="demo-box">
+            <h2>1. Understanding Document Structure</h2>
+            <div class="tree-view" id="structure-demo">
+                <div class="tree-item">html
+                    <div class="tree-item">head
+                        <div class="tree-item">title</div>
+                    </div>
+                    <div class="tree-item">body
+                        <div class="tree-item">h1</div>
+                        <div class="tree-item">div</div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="showStructure()">Show Current Page Structure</button>
+            <div class="output" id="structure-output"></div>
+        </div>
+
+        <div class="demo-box">
+            <h2>2. Node Navigation</h2>
+            <div id="navigation-demo">
+                <ul class="list-of--nodes">
+                    <li>First Child</li>
+                    <li>Middle Child</li>
+                    <li>Last Child</li>
+                </ul>
+            </div>
+            <button onclick="showChildren()">Show Children</button>
+            <button onclick="showFirstChild()">Show First Child</button>
+            <button onclick="showLastChild()">Show Last Child</button>
+            <div class="output" id="navigation-output"></div>
+        </div>
+
+        <div class="demo-box">
+            <h2>3. Selectors Demo</h2>
+            <div id="selectors-demo">
+                <p class="list-of--nodes">First paragraph</p>
+                <p class="list-of--nodes">Second paragraph</p>
+                <p id="special-p">Special paragraph</p>
+            </div>
+            <button onclick="showByClass()">Show by Class</button>
+            <button onclick="showById()">Show by ID</button>
+            <button onclick="showByTag()">Show by Tag</button>
+            <div class="output" id="selectors-output"></div>
+        </div>
+
+        <div class="demo-box">
+            <h2>4. Content Properties Demo</h2>
+            <p>Understanding innerHTML vs innerText vs textContent:</p>
+            
+            <div class="content-demo" id="content-demo">
+                This is <b>bold text</b> with a 
+                <span class="hidden-content">hidden element</span>
+                and a <a href="#">link</a>.
+            </div>
+            
+            <button onclick="showInnerHTML()">Show innerHTML</button>
+            <button onclick="showInnerText()">Show innerText</button>
+            <button onclick="showTextContent()">Show textContent</button>
+            
+            <div class="output" id="content-output"></div>
+            
+            <div class="explanation" style="margin-top: 15px;">
+                <p><strong>Key Differences:</strong></p>
+                <ul>
+                    <li><code>innerHTML</code>: Shows HTML markup and content</li>
+                    <li><code>innerText</code>: Shows visible text only (respects CSS)</li>
+                    <li><code>textContent</code>: Shows all text content (including hidden)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showStructure() {
+            const output = document.getElementById('structure-output');
+            output.textContent = `
+Body children count: ${document.body.children.length}
+First child type: ${document.body.firstChild.nodeName}
+First element child type: ${document.body.firstElementChild.nodeName}
+            `;
+        }
+
+        function showChildren() {
+            const demo = document.querySelector('.list-of--nodes');
+            const output = document.getElementById('navigation-output');
+            output.textContent = `Children count: ${demo.children.length}
+Child elements: ${Array.from(demo.children).map(child => child.textContent).join(', ')}`;
+        }
+
+        function showFirstChild() {
+            const demo = document.querySelector('.list-of--nodes');
+            const output = document.getElementById('navigation-output');
+            output.textContent = `First child: ${demo.firstElementChild.textContent}`;
+        }
+
+        function showLastChild() {
+            const demo = document.querySelector('.list-of--nodes');
+            const output = document.getElementById('navigation-output');
+            output.textContent = `Last child: ${demo.lastElementChild.textContent}`;
+        }
+
+        function showByClass() {
+            const elements = document.getElementsByClassName('list-of--nodes');
+            const output = document.getElementById('selectors-output');
+            output.textContent = `Found ${elements.length} elements with class 'list-of--nodes'
+Content: ${Array.from(elements).map(el => el.textContent).join(', ')}`;
+        }
+
+        function showById() {
+            const element = document.getElementById('special-p');
+            const output = document.getElementById('selectors-output');
+            output.textContent = `Element with ID 'special-p' contains: ${element.textContent}`;
+        }
+
+        function showByTag() {
+            const elements = document.getElementsByTagName('p');
+            const output = document.getElementById('selectors-output');
+            output.textContent = `Found ${elements.length} <p> elements
+Content: ${Array.from(elements).map(el => el.textContent).join(', ')}`;
+        }
+
+        function showInnerHTML() {
+            const demo = document.getElementById('content-demo');
+            const output = document.getElementById('content-output');
+            output.textContent = `innerHTML shows HTML tags and content:
+${demo.innerHTML}`;
+        }
+
+        function showInnerText() {
+            const demo = document.getElementById('content-demo');
+            const output = document.getElementById('content-output');
+            output.textContent = `innerText shows only visible text (respects CSS):
+${demo.innerText}`;
+        }
+
+        function showTextContent() {
+            const demo = document.getElementById('content-demo');
+            const output = document.getElementById('content-output');
+            output.textContent = `textContent shows all text (including hidden):
+${demo.textContent}`;
+        }
+    </script>
+</body>
+</html>
