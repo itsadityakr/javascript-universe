@@ -5,6 +5,34 @@
 ### **What is `localStorage`?**  
 `localStorage` is a built-in JavaScript feature that allows websites to store key-value pairs in a user’s browser. The data persists even after the browser is closed or the computer is restarted.  
 
+Local storage is a feature provided by web browsers that allows websites to store data on the client's device, and it is accessible only from the same domain. To see and interact with local storage for a specific website:
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(3).png" alt="" width="500">
+
+1. **Open the Website**:
+   - Launch the website you want to inspect.
+
+2. **Inspect the Website**:
+   - Right-click anywhere on the page and select **Inspect** (or press `Ctrl+Shift+I` on Windows or `Cmd+Opt+I` on macOS).
+   - This opens the browser's developer tools.
+
+3. **Navigate to the "Application" Tab**:
+   - In the developer tools window, find and click on the **Application** tab.
+   - In the left sidebar, under **Storage**, click on **Local Storage**. This will show a list of websites that have stored data in the local storage.
+   
+Here's an example of what it looks like:
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(4).png" alt="" width="500">
+
+4. **Select the Website's Local Storage**:
+   - In the left column, under **Local Storage**, you'll see the domain of the website. For instance, in the screenshot, it is `http://127.0.0.1:XXXX` (the local server URL). Click on the domain to view its local storage data.
+   
+   You will now see the key-value pairs stored in local storage for that website.
+   
+Here's an example of the data:
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(5).png" alt="" width="500">
+
 ### **Key Features of `localStorage`**  
 - **Persistent Storage:** Data remains until explicitly removed.  
 - **Per-Origin Storage:** Each website has its own separate storage space.  
@@ -41,6 +69,25 @@ localStorage.setItem("key", "value");
 localStorage.setItem("username", "John");
 localStorage.setItem("isLoggedIn", "true");
 ```
+To add or update data in the local storage, you can use JavaScript's `localStorage.setItem()` method.
+
+#### Syntax:
+```javascript
+localStorage.setItem('keyname', 'valuename');
+```
+
+- **keyname** is the name of the key (identifier).
+- **valuename** is the value associated with the key.
+
+For example:
+```javascript
+localStorage.setItem("username", "JohnDoe");
+```
+
+This command will store `"JohnDoe"` under the key `"username"`. You can view it in the developer tools under the local storage tab of the domain.
+
+Example showing the set item process:
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(6).png" alt="" width="500">
 
 ---
 
@@ -64,6 +111,25 @@ If the key does not exist, `getItem()` returns `null`:
 console.log(localStorage.getItem("nonExistingKey")); // Output: null
 ```
 
+To retrieve the value of an item stored in local storage, you can use the `localStorage.getItem()` method.
+
+#### Syntax:
+```javascript
+localStorage.getItem('keyname');
+```
+
+- **keyname** is the name of the key whose value you want to retrieve.
+
+For example:
+```javascript
+var username = localStorage.getItem("username");
+console.log(username);  // Output: "JohnDoe"
+```
+
+Here's an example showing the retrieval of an item from local storage:
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(7).png" alt="" width="500">
+
 ---
 
 ### **2.3 Removing a Single Item (`removeItem`)**  
@@ -77,6 +143,26 @@ localStorage.removeItem("key");
 localStorage.removeItem("username");
 console.log(localStorage.getItem("username")); // Output: null
 ```
+If you no longer need a particular key-value pair in the local storage, you can remove it using the `localStorage.removeItem()` method.
+
+#### Syntax:
+```javascript
+localStorage.removeItem('keyname');
+```
+
+- **keyname** is the name of the key you want to remove.
+
+For example:
+```javascript
+localStorage.removeItem("username");
+```
+
+This will remove the `"username"` key from local storage. After this, if you try to retrieve the value associated with `"username"`, it will return `null`.
+
+Example showing how to remove an item from local storage:
+
+<img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(2).png" alt="" width="500">
+
 
 ---
 
