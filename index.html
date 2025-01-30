@@ -1,79 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirect Button</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f4f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Redirect Button</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f4f8;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
 
-    .container {
-      text-align: center;
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 40px;
-      width: 300px;
-      transition: all 0.3s ease-in-out;
-    }
+            .container {
+                text-align: center;
+                background-color: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 40px;
+                width: 300px;
+                transition: all 0.3s ease-in-out;
+            }
 
-    .container:hover {
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
+            .container:hover {
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            }
 
-    h1 {
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 20px;
-    }
+            h1 {
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 20px;
+            }
 
-    .notes-btn {
-      padding: 15px 30px;
-      margin: 8px;
-      font-size: 16px;
-      color: rgb(0, 0, 0);
-      background-color: #ffdd00;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .notes-btn:hover {
-      background-color: #ffaa00;
-    }
+            .notes-btn {
+                padding: 15px 30px;
+                margin: 8px;
+                font-size: 16px;
+                color: rgb(0, 0, 0);
+                background-color: #ffdd00;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .notes-btn:hover {
+                background-color: #ffaa00;
+            }
 
-    .project-btn {
-      padding: 15px 30px;
-      margin: 8px;
-      font-size: 16px;
-      color: white;
-      background-color: #001a9a;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .project-btn:hover {
-      background-color: #0026e4;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <h1>Visit Pages</h1>
-    <button class = "notes-btn" onclick="window.location.href='./13_dom/dom.html';">DOM in JS</button>
-    <button class = "notes-btn" onclick="window.location.href='./14_events/events.html';">Events in JS</button>
-    <button class = "project-btn" onclick="window.location.href='./15_project_gradient_generator/gradient_generator.html';">Project - Gradient Generator</button>
-  </div>
-
-</body>
+            .project-btn {
+                padding: 15px 30px;
+                margin: 8px;
+                font-size: 16px;
+                color: white;
+                background-color: #001a9a;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .project-btn:hover {
+                background-color: #0026e4;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Visit Pages</h1>
+            <button
+                class="notes-btn"
+                onclick="window.location.href='./13_dom/dom.html';"
+            >
+                DOM in JS
+            </button>
+            <button
+                class="notes-btn"
+                onclick="window.location.href='./14_events/events.html';"
+            >
+                Events in JS
+            </button>
+            <button
+                class="notes-btn"
+                onclick="window.location.href='./16_local_storage_and_json/local_storage.html';"
+            >
+                Local Storage and JSON Stringify
+            </button>
+            <button
+                class="project-btn"
+                onclick="window.location.href='./15_project_gradient_generator/gradient_generator.html';"
+            >
+                Project - Gradient Generator
+            </button>
+        </div>
+    </body>
 </html>
