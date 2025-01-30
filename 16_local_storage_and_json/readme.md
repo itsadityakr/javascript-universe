@@ -87,6 +87,7 @@ localStorage.setItem("username", "JohnDoe");
 This command will store `"JohnDoe"` under the key `"username"`. You can view it in the developer tools under the local storage tab of the domain.
 
 Example showing the set item process:
+
 <img src="https://raw.githubusercontent.com/itsadityakr/javascript-universe/refs/heads/main/%CE%A9_assets/images/image%20(6).png" alt="" width="500">
 
 ---
