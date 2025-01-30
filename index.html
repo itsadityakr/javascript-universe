@@ -35,20 +35,34 @@
       margin-bottom: 20px;
     }
 
-    button {
+    .notes-btn {
       padding: 15px 30px;
       margin: 8px;
       font-size: 16px;
-      color: white;
-      background-color: #4CAF50;
+      color: rgb(0, 0, 0);
+      background-color: #ffdd00;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
+    .notes-btn:hover {
+      background-color: #ffaa00;
+    }
 
-    button:hover {
-      background-color: #45a049;
+    .project-btn {
+      padding: 15px 30px;
+      margin: 8px;
+      font-size: 16px;
+      color: white;
+      background-color: #001a9a;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .project-btn:hover {
+      background-color: #0026e4;
     }
   </style>
 </head>
@@ -56,8 +70,9 @@
 
   <div class="container">
     <h1>Visit Pages</h1>
-    <button onclick="window.location.href='./13_dom/dom.html';">DOM in JS</button>
-    <button onclick="window.location.href='./14_events/events.html';">Events in JS</button>
+    <button class = "notes-btn" onclick="window.location.href='./13_dom/dom.html';">DOM in JS</button>
+    <button class = "notes-btn" onclick="window.location.href='./14_events/events.html';">Events in JS</button>
+    <button class = "project-btn" onclick="window.location.href='./15_project_gradient_generator/gradient_generator.html';">Project - Gradient Generator</button>
   </div>
 
 </body>
