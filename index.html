@@ -6,8 +6,8 @@
         <title>Redirect Button</title>
         <style>
             body {
-                font-family: Arial, sans-serif;
-                background-color: #f0f4f8;
+                font-family: "Arial", sans-serif;
+                background: linear-gradient(135deg, #e0eafc, #cfdef3);
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -18,51 +18,97 @@
             .container {
                 text-align: center;
                 background-color: #ffffff;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 12px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
                 padding: 40px;
-                width: 300px;
+                width: 350px;
                 transition: all 0.3s ease-in-out;
             }
 
             .container:hover {
-                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+                transform: translateY(-5px);
             }
 
             h1 {
-                font-size: 24px;
+                font-size: 28px;
                 color: #333;
-                margin-bottom: 20px;
+                margin-bottom: 30px;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+
+            .notes-btn,
+            .project-btn {
+                padding: 16px 35px;
+                margin: 12px;
+                font-size: 18px;
+                font-weight: 500;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: transform 0.3s ease, background-color 0.3s ease;
+                width: 100%;
+                box-sizing: border-box;
             }
 
             .notes-btn {
-                padding: 15px 30px;
-                margin: 8px;
-                font-size: 16px;
-                color: rgb(0, 0, 0);
-                background-color: #ffdd00;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
+                background: linear-gradient(90deg, #ff6a00, #ff9900);
             }
+
             .notes-btn:hover {
-                background-color: #ffaa00;
+                background: linear-gradient(90deg, #ff9900, #ff6a00);
+                transform: translateY(-3px);
             }
 
             .project-btn {
-                padding: 15px 30px;
-                margin: 8px;
-                font-size: 16px;
-                color: white;
-                background-color: #001a9a;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
+                background: linear-gradient(90deg, #4e73df, #224abe);
             }
+
             .project-btn:hover {
-                background-color: #0026e4;
+                background: linear-gradient(90deg, #224abe, #4e73df);
+                transform: translateY(-3px);
+            }
+
+            .notes-btn:focus,
+            .project-btn:focus {
+                outline: none;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Adding subtle animation */
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            .notes-btn,
+            .project-btn {
+                animation: pulse 1.5s infinite;
+            }
+
+            .footer {
+                margin-top: 30px;
+                font-size: 16px;
+                color: #555;
+            }
+
+            .footer a {
+                color: #4e73df;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            .footer a:hover {
+                text-decoration: underline;
             }
         </style>
     </head>
@@ -93,6 +139,16 @@
             >
                 Project - Gradient Generator
             </button>
+            <div class="footer">
+                <p>Created by <strong>Aditya Kumar</strong></p>
+                <p>
+                    Check my
+                    <a href="https://github.com/itsadityakr" target="_blank"
+                        >GitHub</a
+                    >
+                    for more projects.
+                </p>
+            </div>
         </div>
     </body>
 </html>
