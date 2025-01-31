@@ -3,28 +3,18 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Todo List</title>
         <link rel="stylesheet" href="./styles.css" />
     </head>
     <body>
         <h1>Todo List</h1>
         <form>
             <div>
-                <input type="text" id="inputValue" />
-                <button class="btn">Add Todo</button>
+                <input type="text" id="todoInput" />
+                <button class="addButton">Add Todo</button>
             </div>
-            <section class="todo-list-elem"></section>
+            <section class="todoListContainer"></section>
         </form>
+        <script src="./script.js"></script>
     </body>
-    <script>
-        const mainTodoElem = document.querySelector(".todo-list-elem");
-        const inputValue = document.getElementById("inputValue");
-        const addTodoList = (e) => {
-            e.preventDefault();
-            console.log("testing");
-        };
-        document.querySelector(".btn").addEventListener("click", (e) => {
-            addTodoList(e);
-        });
-    </script>
 </html>
