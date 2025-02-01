@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Date Playground</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button, select {
+            margin: 10px;
+            padding: 10px;
+            width: 90%;
+            font-size: 16px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .output {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>JavaScript Date Playground</h2>
+        
+        <!-- Date Selection -->
+        <label for="dateInput">Select a Date:</label>
+        <input type="date" id="dateInput">
+
+        <!-- Show Date Details -->
+        <button onclick="showDateInfo()">Show Date Info</button>
+        
+        <!-- Add/Subtract Days, Months, or Years -->
+        <h3>Modify Date</h3>
+        <input type="number" id="modifyValue" placeholder="Enter value">
+        <select id="modifyType">
+            <option value="days">Days</option>
+            <option value="months">Months</option>
+            <option value="years">Years</option>
+        </select>
+        <button onclick="modifyDate()">Modify Date</button>
+
+        <!-- Compare Two Dates -->
+        <h3>Compare Two Dates</h3>
+        <label for="secondDateInput">Select Another Date:</label>
+        <input type="date" id="secondDateInput">
+        <button onclick="compareDates()">Compare Dates</button>
+
+        <!-- Date Format Conversion -->
+        <h3>Convert Date Format</h3>
+        <button onclick="convertDateFormat()">Convert Format</button>
+
+        <!-- Output Section -->
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function showDateInfo() {
+            let dateValue = document.getElementById("dateInput").value;
+            if (!dateValue) {
+                document.getElementById("output").innerText = "Please select a date.";
+                return;
+            }
+
+            let date = new Date(dateValue);
+            let outputText = `
+                Full Year: ${date.getFullYear()} \n
+                Month: ${date.getMonth() + 1} \n
+                Date: ${date.getDate()} \n
+                Day of the Week: ${date.getDay()} (0=Sunday, 6=Saturday) \n
+                Time (UTC): ${date.toUTCString()} \n
+                Timestamp: ${date.getTime()} ms since Unix Epoch
+            `;
+            document.getElementById("output").innerText = outputText;
+        }
+
+        function modifyDate() {
+            let dateValue = document.getElementById("dateInput").value;
+            let modifyValue = document.getElementById("modifyValue").value;
+            let modifyType = document.getElementById("modifyType").value;
+
+            if (!dateValue || isNaN(modifyValue) || modifyValue === "") {
+                document.getElementById("output").innerText = "Please select a date and enter a valid number.";
+                return;
+            }
+
+            let date = new Date(dateValue);
+            modifyValue = parseInt(modifyValue);
+
+            if (modifyType === "days") {
+                date.setDate(date.getDate() + modifyValue);
+            } else if (modifyType === "months") {
+                date.setMonth(date.getMonth() + modifyValue);
+            } else if (modifyType === "years") {
+                date.setFullYear(date.getFullYear() + modifyValue);
+            }
+
+            document.getElementById("output").innerText = `Modified Date: ${date.toDateString()}`;
+        }
+
+        function compareDates() {
+            let date1Value = document.getElementById("dateInput").value;
+            let date2Value = document.getElementById("secondDateInput").value;
+
+            if (!date1Value || !date2Value) {
+                document.getElementById("output").innerText = "Please select two dates.";
+                return;
+            }
+
+            let date1 = new Date(date1Value);
+            let date2 = new Date(date2Value);
+
+            let diffTime = Math.abs(date2 - date1);
+            let diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+
+            let comparison = "";
+            if (date1 > date2) {
+                comparison = "The first date is later than the second date.";
+            } else if (date1 < date2) {
+                comparison = "The first date is earlier than the second date.";
+            } else {
+                comparison = "Both dates are the same.";
+            }
+
+            document.getElementById("output").innerText = `${comparison} Difference: ${diffDays} days.`;
+        }
+
+        function convertDateFormat() {
+            let dateValue = document.getElementById("dateInput").value;
+            if (!dateValue) {
+                document.getElementById("output").innerText = "Please select a date.";
+                return;
+            }
+
+            let date = new Date(dateValue);
+
+            let formattedDate1 = date.toLocaleDateString();
+            let formattedDate2 = date.toISOString().split("T")[0];
+            let formattedDate3 = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+
+            document.getElementById("output").innerText = `
+                Local Format: ${formattedDate1} \n
+                ISO Format: ${formattedDate2} \n
+                DD-MM-YYYY Format: ${formattedDate3}
+            `;
+        }
+    </script>
+
+</body>
+</html>
