@@ -4,15 +4,15 @@ Welcome to the **JS Universe** repository! This collection of projects and exerc
 
 ## 🚀 Table of Contents
 
-- [Project Structure](#project-structure)
-  - [Directories Overview](#directories-overview)
-- [How to Use](#how-to-use)
-  - [Clone the Repository](#clone-the-repository)
-  - [Open Projects](#open-projects)
-  - [Run the Projects](#run-the-projects)
-  - [Contribute](#contribute)
-- [License](#license)
-- [Conclusion](#conclusion)
+-   [Project Structure](#project-structure)
+    -   [Directories Overview](#directories-overview)
+-   [How to Use](#how-to-use)
+    -   [Clone the Repository](#clone-the-repository)
+    -   [Open Projects](#open-projects)
+    -   [Run the Projects](#run-the-projects)
+    -   [Contribute](#contribute)
+-   [License](#license)
+-   [Conclusion](#conclusion)
 
 ## 📂 Project Structure
 
@@ -20,24 +20,31 @@ The repository is organized into several directories, each focused on different 
 
 ### **Directories Overview:**
 
-- **00_projects**: Overview and setup for JS projects.
-- **01_types_of_js**: Learn the different types in JavaScript.
-- **02_values_and_variables**: Understand how values and variables work in JS.
-- **03_datatypes**: A deeper dive into JavaScript data types.
-- **04_concatenation_coercion**: Learn about string concatenation and type coercion.
-- **05_expressions_and_operators**: Explore various JS expressions and operators.
-- **06_conditional_statements_and_loops**: Dive into control flow with conditionals and loops.
-- **07_functions**: Master JavaScript functions.
-- **08_arrays**: A comprehensive guide to arrays in JS.
-- **09_strings**: Work with strings in JavaScript.
-- **10_maths**: Explore mathematical operations and functions.
-- **11_window_objects**: Learn about browser window objects in JS.
-- **12_bom**: Explore the Browser Object Model (BOM).
-- **13_dom**: Master the Document Object Model (DOM).
-- **14_events**: Handle user interactions with JavaScript events.
-- **15_project_gradient_generator**: A mini project that generates CSS gradients.
-- **16_local_storage_and_json**: Learn about local storage and working with JSON.
-- **17_project_todo_list**: Build a simple Todo List app.
+- **01-types-of-js**: Introduction to JavaScript, its types, and basic syntax.
+- **02-values-and-variables**: Covers variables, data assignment, and variable types.
+- **03-datatypes**: Explores different data types in JavaScript.
+- **04-concatenation-coercion**: Focuses on string concatenation and type coercion.
+- **05-expressions-and-operators**: Covers JavaScript expressions, operators, and their usage.
+- **06-conditional-statements-and-loops**: Explores `if`, `else`, `switch`, and loops.
+- **07-functions**: Introduction to functions, function declarations, expressions, and scope.
+- **08-arrays**: Covers array manipulation, methods, and usage.
+- **09-strings**: Focuses on string methods and manipulations.
+- **10-maths**: Explores the Math object and mathematical operations.
+- **11-window-objects**: Introduction to the `window` object and its properties/methods.
+- **12-bom**: Covers the Browser Object Model (BOM) and its components.
+- **13-dom**: Introduction to the Document Object Model (DOM) and DOM manipulation.
+- **14-events**: Explores event handling and listeners.
+- **15-project-gradient-generator**: A project to create a gradient generator.
+- **16-local-storage-and-json**: Covers local storage and working with JSON data.
+- **17-project-todo-list**: A project to build a to-do list application.
+- **18-date-time-objects**: Explores the `Date` object and time-related operations.
+- **19-time-based-events**: Covers time-based events like `setTimeout` and `setInterval`.
+- **20-project-digital-watch**: A project to build a digital watch.
+- **21-project-stopwatch**: A project to build a stopwatch.
+- **22-objects-dynamic-keys-data-modeling**: Explores dynamic keys in objects and data modeling.
+- **23-project-calculator**: A project to build a calculator.
+- **24-pass-by-value-vs-pass-by-reference**: Explores pass-by-value and pass-by-reference.
+- **25-json**: Focuses on JSON and its usage.
 
 ## 🛠 How to Use
 
@@ -72,3 +79,4 @@ The **JS Universe** is your gateway to mastering JavaScript! Dive in, explore, a
 Happy coding! 🚀
 
 ---
+
