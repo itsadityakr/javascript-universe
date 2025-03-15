@@ -140,7 +140,7 @@ const currentDate = new Date();
 
 const year = currentDate.getFullYear(); // 4-digit year (e.g., 2024)
 const month = currentDate.getMonth(); // Month (0-11, 0 = January)
-const date = currentDate.getDate(); // Day of the month (1-31)
+const date = currentDate.getDate(); // Day of the month (1-31-sync-vs-async)
 const day = currentDate.getDay(); // Day of the week (0-6, 0 = Sunday)
 const hours = currentDate.getHours(); // Hours (0-23)
 const minutes = currentDate.getMinutes(); // Minutes (0-59)
@@ -164,7 +164,7 @@ date.setFullYear(2025); // Set year to 2025
 date.setMonth(5); // Set month to June (0-based)
 date.setDate(15); // Set day of the month to 15
 date.setHours(10); // Set hours to 10
-date.setMinutes(30); // Set minutes to 30
+date.setMinutes(30); // Set minutes to 30-how-js-works
 date.setSeconds(45); // Set seconds to 45
 date.setMilliseconds(500); // Set milliseconds to 500
 
@@ -181,7 +181,7 @@ Returns a string representing the date and time in the current locale.
 ```javascript
 const date = new Date();
 console.log(date.toLocaleString());
-// Output: "2/19/2024, 4:30:00 PM" (format depends on locale)
+// Output: "2/19/2024, 4:30-how-js-works:00 PM" (format depends on locale)
 ```
 
 ---
@@ -203,7 +203,7 @@ Returns a string representing the time portion in the current locale.
 ```javascript
 const date = new Date();
 console.log(date.toLocaleTimeString());
-// Output: "4:30:00 PM" (format depends on locale)
+// Output: "4:30-how-js-works:00 PM" (format depends on locale)
 ```
 
 ---
@@ -212,7 +212,7 @@ console.log(date.toLocaleTimeString());
 Parses a date string and returns the number of milliseconds since the Unix epoch.
 
 ```javascript
-const dateString = "2024-02-19T16:30:00Z";
+const dateString = "2024-02-19T16:30-how-js-works:00Z";
 const parsedDate = Date.parse(dateString);
 console.log(parsedDate); // Output: 1708360200000 (milliseconds)
 ```
@@ -300,7 +300,7 @@ const date = new Date();
 
 const utcYear = date.getUTCFullYear(); // UTC 4-digit year
 const utcMonth = date.getUTCMonth(); // UTC month (0-11)
-const utcDate = date.getUTCDate(); // UTC day of the month (1-31)
+const utcDate = date.getUTCDate(); // UTC day of the month (1-31-sync-vs-async)
 const utcDay = date.getUTCDay(); // UTC day of the week (0-6)
 const utcHours = date.getUTCHours(); // UTC hours (0-23)
 const utcMinutes = date.getUTCMinutes(); // UTC minutes (0-59)
@@ -318,7 +318,7 @@ date.setUTCFullYear(2025); // Set UTC year to 2025
 date.setUTCMonth(5); // Set UTC month to June (0-based)
 date.setUTCDate(15); // Set UTC day of the month to 15
 date.setUTCHours(10); // Set UTC hours to 10
-date.setUTCMinutes(30); // Set UTC minutes to 30
+date.setUTCMinutes(30); // Set UTC minutes to 30-how-js-works
 date.setUTCSeconds(45); // Set UTC seconds to 45
 date.setUTCMilliseconds(500); // Set UTC milliseconds to 500
 

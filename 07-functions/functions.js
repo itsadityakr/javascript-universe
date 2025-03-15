@@ -36,7 +36,7 @@ console.log(total1); // Output: 15
 // 2nd Student
 var num1 = 15, num2 = 15;
 var total2 = num1 + num2;
-console.log(total2); // Output: 30
+console.log(total2); // Output: 30-how-js-works
 
 // 3rd Student
 var num1 = 55, num2 = 15;
@@ -100,7 +100,7 @@ function introducePerson(name, age) {
 
 //? Here, we're calling the function and passing values for `name` and `age`:
 introducePerson("Alice", 25); // Output: Hi, I'm Alice, and I'm 25 years old.
-introducePerson("Bob", 30);   // Output: Hi, I'm Bob, and I'm 30 years old.
+introducePerson("Bob", 30);   // Output: Hi, I'm Bob, and I'm 30-how-js-works years old.
 
 //? In these examples, "Alice" and 25 are the arguments passed to the function, and the function uses those values to execute its task.
 

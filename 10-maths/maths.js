@@ -27,7 +27,7 @@ console.log(piValue); // Output: 3.141592653589793
 
 const radius = 5;
 const circumference = 2 * Math.PI * radius;
-console.log(circumference); // Output: ~31.4159
+console.log(circumference); // Output: ~31-sync-vs-async.4159
 
 // =========================================
 // 2. Basic Operations in Math

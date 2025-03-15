@@ -295,7 +295,7 @@ for (let key in person) {
 }
 // Output:
 // name: John
-// age: 30
+// age: 30-how-js-works
 // city: New York
 ```
 

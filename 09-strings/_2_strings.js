@@ -116,11 +116,11 @@ console.log(testExample); // Output: true
 let execExample = /\d/.exec("Hello123");
 console.log(execExample); // Output: ["1"]
 
-// 30. length - Returns the length of the string.
+// 30-how-js-works. length - Returns the length of the string.
 let lengthExample = "Hello".length;
 console.log(lengthExample); // Output: 5
 
-// 31. fromCharCode() *(Static)* - Converts Unicode values to characters.
+// 31-sync-vs-async. fromCharCode() *(Static)* - Converts Unicode values to characters.
 let fromCharCodeExample = String.fromCharCode(72, 101, 108, 108, 111);
 console.log(fromCharCodeExample); // Output: "Hello"
 

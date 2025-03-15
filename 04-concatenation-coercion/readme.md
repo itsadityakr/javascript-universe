@@ -18,7 +18,7 @@ const welcomeMessage = "Hi " + "Everyone!";
 console.log(welcomeMessage); // Output: "Hi Everyone!"
 
 let userInfo = "User Age: " + 30;
-console.log(userInfo); // Output: "User Age: 30"
+console.log(userInfo); // Output: "User Age: 30-how-js-works"
 ```
 
 #### **b. Mixing Numbers and Strings**
@@ -138,7 +138,7 @@ console.log(isNaN(456)); // Output: false (456 is a valid number)
 - If one operand is a string, JavaScript coerces the other operand to a string.
 - Example:
   ```javascript
-  console.log("Hi " + 30); // Output: "Hi 30"
+  console.log("Hi " + 30); // Output: "Hi 30-how-js-works"
   ```
 
 #### **b. Arithmetic with Strings**

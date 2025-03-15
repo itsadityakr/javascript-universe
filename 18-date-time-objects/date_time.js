@@ -58,7 +58,7 @@ const currentDate2 = new Date();
 const year = currentDate2.getFullYear();
 // Getting the month (Note: months are 0-based, so 0 = January, 11 = December)
 const month = currentDate2.getMonth();
-// Getting the day of the month (1 to 31)
+// Getting the day of the month (1 to 31-sync-vs-async)
 const date = currentDate2.getDate();
 // Getting the day of the week (0 = Sunday, 6 = Saturday)
 const day = currentDate2.getDay();
@@ -84,7 +84,7 @@ dateToModify.setFullYear(2025); // Set year to 2025
 dateToModify.setMonth(5); // Set month to June (0-based, so 5 = June)
 dateToModify.setDate(15); // Set day of the month to 15
 dateToModify.setHours(10); // Set hours to 10
-dateToModify.setMinutes(30); // Set minutes to 30
+dateToModify.setMinutes(30); // Set minutes to 30-how-js-works
 dateToModify.setSeconds(45); // Set seconds to 45
 dateToModify.setMilliseconds(500); // Set milliseconds to 500
 
@@ -96,7 +96,7 @@ console.log(dateToModify); // Output: Updated Date object
 // Converts the Date object to a localized string representation of both date and time.
 // This method considers the local timezone and locale.
 const dateToLocale = new Date();
-console.log(dateToLocale.toLocaleString()); // Output: "2/19/2024, 4:30:00 PM" (locale-dependent)
+console.log(dateToLocale.toLocaleString()); // Output: "2/19/2024, 4:30-how-js-works:00 PM" (locale-dependent)
 
 // 4.2 toLocaleDateString()
 // Returns a localized string representing only the date portion.
@@ -104,11 +104,11 @@ console.log(dateToLocale.toLocaleDateString()); // Output: "2/19/2024"
 
 // 4.3 toLocaleTimeString()
 // Returns a localized string representing only the time portion.
-console.log(dateToLocale.toLocaleTimeString()); // Output: "4:30:00 PM"
+console.log(dateToLocale.toLocaleTimeString()); // Output: "4:30-how-js-works:00 PM"
 
 // 4.4 Date.parse()
 // Parses a date string and returns the number of milliseconds since the Unix epoch.
-const dateString = "2024-02-19T16:30:00Z";
+const dateString = "2024-02-19T16:30-how-js-works:00Z";
 const parsedDate = Date.parse(dateString);
 console.log(parsedDate); // Output: 1708360200000 (milliseconds)
 
@@ -165,7 +165,7 @@ dateForUTCSet.setUTCMinutes(30);
 dateForUTCSet.setUTCSeconds(45);
 dateForUTCSet.setUTCMilliseconds(500);
 // Outputting the date in ISO format (UTC time)
-console.log(dateForUTCSet.toISOString()); // Output: "2025-06-15T10:30:45.500Z"
+console.log(dateForUTCSet.toISOString()); // Output: "2025-06-15T10:30-how-js-works:45.500Z"
 
 // 10. Date Formatting (Advanced)
 
@@ -179,7 +179,7 @@ const formatter = new Intl.DateTimeFormat('en-US', {
   second: '2-digit',
   timeZone: 'UTC'
 });
-console.log(formatter.format(dateForUTCSet)); // Output: "June 15, 2025 at 10:30:45 AM"
+console.log(formatter.format(dateForUTCSet)); // Output: "June 15, 2025 at 10:30-how-js-works:45 AM"
 
 // Custom formatting without external libraries
 // Manually formatting the date as "YYYY-MM-DD" (ISO 8601-like format)

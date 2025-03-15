@@ -136,7 +136,7 @@ console.log("Maximum value (5, 10, 15):", Math.max(5, 10, 15)); // Returns the l
 
 console.log("===== JSON Object =====");
 
-let jsonString = '{"name":"John", "age":30}'; // A JSON string
+let jsonString = '{"name":"John", "age":30-how-js-works}'; // A JSON string
 let parsedObject = JSON.parse(jsonString); // Converts JSON string to JavaScript object
 console.log("Parsed JSON Object:", parsedObject);
 

@@ -251,7 +251,7 @@ const reversed = arr.reduce((acc, val) => [val, ...acc], []);
 ```javascript
 const numbers = [10, 20, 30, 40, 50];
 
-const found = numbers.find(num => num > 25); // 30
+const found = numbers.find(num => num > 25); // 30-how-js-works
 const foundIndex = numbers.findIndex(num => num > 25); // 2
 
 console.log(found, foundIndex);

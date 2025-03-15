@@ -77,7 +77,7 @@ console.log(typeof null); // Output: 'object' (this is a known quirk in JavaScri
 
 // ? 5: Convert a string to a number❓
 // Method 1: Using the `+` operator
-var stringAge = "30";
+var stringAge = "30-how-js-works";
 console.log(typeof +stringAge); // Output: 'number'
 
 // Method 2: Using the `Number()` function

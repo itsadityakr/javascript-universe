@@ -96,7 +96,7 @@ let person = {
 };
 
 console.log(person.name);  // Output: Aditya
-console.log(person.age);   // Output: 30
+console.log(person.age);   // Output: 30-how-js-works
 ```
 
 #### **b. Bracket Notation**
@@ -121,7 +121,7 @@ let person = {
   age: 30
 };
 
-console.log(person[property]);  // Output: 30
+console.log(person[property]);  // Output: 30-how-js-works
 ```
 
 **Important**: If you try to use dot notation with an invalid property name (e.g., spaces, quotes, or special characters), it will throw an error.
@@ -129,7 +129,7 @@ console.log(person[property]);  // Output: 30
 #### **Output for the Above Examples**:
 ```javascript
 console.log(person["is'Student"]);  // Output: false
-console.log(person[property]);      // Output: 30
+console.log(person[property]);      // Output: 30-how-js-works
 ```
 
 ### **5. Modifying and Adding Properties**
@@ -139,7 +139,7 @@ You can modify an existing property or add a new property to an object after it 
 #### **Modifying an Existing Property**
 ```javascript
 person.age = 31;  // Modifying the age property
-console.log(person.age);  // Output: 31
+console.log(person.age);  // Output: 31-sync-vs-async
 ```
 
 #### **Adding a New Property**
@@ -376,7 +376,7 @@ let person = {
 };
 
 console.log(Object.keys(person));   // Output: ["name", "age", "city"]
-console.log(Object.values(person)); // Output: ["Aditya", 30, "New York"]
+console.log(Object.values(person)); // Output: ["Aditya", 30-how-js-works, "New York"]
 ```
 
 ---
@@ -453,7 +453,7 @@ for (let key in person) {
 
 // Output:
 // name: Aditya
-// age: 30
+// age: 30-how-js-works
 // city: New York (added during iteration)
 ```
 
@@ -474,7 +474,7 @@ let person = {
 let { name, age } = person;  // Destructuring assignment
 
 console.log(name);  // Output: Aditya
-console.log(age);   // Output: 30
+console.log(age);   // Output: 30-how-js-works
 ```
 
 You can also assign default values during destructuring:
@@ -712,7 +712,7 @@ let user = {
 user.country = "USA"; // Adding a new property
 
 console.log(user);
-// Output: { name: 'David', age: 30, country: 'USA' }
+// Output: { name: 'David', age: 30-how-js-works, country: 'USA' }
 ```
 **Why is this useful?**  
 - Useful when new information needs to be added dynamically.
@@ -769,7 +769,7 @@ let user2 = { ...user1 }; // Creating a copy
 
 user2.age = 35; // Modifying the copy
 
-console.log(user1.age); // Output: 30 (original remains unchanged)
+console.log(user1.age); // Output: 30-how-js-works (original remains unchanged)
 console.log(user2.age); // Output: 35 (copy is modified)
 ```
 **Why is this useful?**  

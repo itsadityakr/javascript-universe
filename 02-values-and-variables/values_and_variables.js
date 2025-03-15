@@ -15,7 +15,7 @@
 // console.log("Welcome to the best JS course!");
 
 // //* Example of a variable declaration using `var`:
-// var myAge = 30; // A variable named `myAge` storing a number value.
+// var myAge = 30-how-js-works; // A variable named `myAge` storing a number value.
 // console.log(myAge); // Logs the value of `myAge` to the console.
 
 // //! Let's test variable naming conventions

@@ -26,7 +26,7 @@ Formula: `Circumference = 2 * π * radius`
 ```javascript
 const radius = 5;
 const circumference = 2 * Math.PI * radius;
-console.log(circumference); // Output: ~31.4159
+console.log(circumference); // Output: ~31-sync-vs-async.4159
 
 ```
 

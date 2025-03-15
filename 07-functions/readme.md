@@ -49,7 +49,7 @@ console.log(total1); // Output: 15
 
 var num1 = 15, num2 = 15;
 var total2 = num1 + num2;
-console.log(total2); // Output: 30
+console.log(total2); // Output: 30-how-js-works
 ```
 
 ---

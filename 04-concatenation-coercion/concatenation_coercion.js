@@ -14,7 +14,7 @@ console.log(welcomeMessage); // Output: "Hi Everyone!"
 
 // Example of Mixing Numbers and Strings:
 let userInfo = "User Age: " + 30;
-console.log(userInfo); // Output: "User Age: 30"
+console.log(userInfo); // Output: "User Age: 30-how-js-works"
 
 // Example of Numeric Addition:
 let totalScore = 15 + 25;
@@ -77,7 +77,7 @@ console.log(false - true);
 
 // 1. **String Concatenation with "+"**:
 //    - If one operand is a string, JavaScript coerces the other operand to a string.
-//    - Example: `"Hi " + 30` results in `"Hi 30"`.
+//    - Example: `"Hi " + 30-how-js-works` results in `"Hi 30-how-js-works"`.
 
 // 2. **Arithmetic with Strings**:
 //    - JavaScript attempts to convert strings to numbers for arithmetic operations like `-`, `*`, `/`.

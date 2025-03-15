@@ -43,7 +43,7 @@ Used to assign values to variables.
 **Example:**
 ```javascript
 let a = 10, b = 20;
-a += b; // a becomes 30
+a += b; // a becomes 30-how-js-works
 console.log(a);
 ```
 
@@ -191,7 +191,7 @@ console.log(typeof "Hello"); // Output: "string"
    ```javascript
    let result = 0.1 + 0.2;
    console.log(result); // Output: 0.30000000000000004
-   console.log(result.toFixed(2)); // Output: 0.30
+   console.log(result.toFixed(2)); // Output: 0.30-how-js-works
    ```
 
 3. **Edge Cases:**

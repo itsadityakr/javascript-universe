@@ -62,11 +62,11 @@
 
 #### Example  
 ```js
-const jsonString = '{"name": "John", "age": 30}';
+const jsonString = '{"name": "John", "age": 30-how-js-works}';
 const jsonObject = JSON.parse(jsonString);
 
 console.log(jsonObject.name); // Output: John
-console.log(jsonObject.age);  // Output: 30
+console.log(jsonObject.age);  // Output: 30-how-js-works
 ```
 
 ### Handling Errors  

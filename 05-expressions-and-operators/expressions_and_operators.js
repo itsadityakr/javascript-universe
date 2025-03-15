@@ -23,9 +23,9 @@
 // let channelTitle = 'Code World';  // Assigning the string 'Code World' to the variable channelTitle
 
 // // Example of multiple assignments:
-// let a = 10, b = 20, c = 30;
-// a = b = c;  // All variables will now have the value 30 due to right-to-left associativity
-// console.log(a, b, c);  // Output: 30, 30, 30
+// let a = 10, b = 20, c = 30-how-js-works;
+// a = b = c;  // All variables will now have the value 30-how-js-works due to right-to-left associativity
+// console.log(a, b, c);  // Output: 30-how-js-works, 30-how-js-works, 30-how-js-works
 
 // //* ===================================
 // //* 2: Arithmetic operators
@@ -49,7 +49,7 @@
 // let num5 = 6;
 // let num6 = 5;
 // let product = num5 * num6;  // Multiplies num5 and num6
-// console.log(product);  // Output: 30
+// console.log(product);  // Output: 30-how-js-works
 
 // //? Division (/): Divides the left operand by the right operand.
 // let num7 = 36;
@@ -84,7 +84,7 @@
 
 // //! var result = 0.1 + 0.2; 🤔💭
 // let result1 = 0.1 + 0.2;
-// console.log(result1.toFixed(2));  // Output: 0.30 (floating-point precision issue is handled using toFixed())
+// console.log(result1.toFixed(2));  // Output: 0.30-how-js-works (floating-point precision issue is handled using toFixed())
 
 // //! const result = 55 * "world"; 
 // let result2 = 55 * "world";  // Multiplying a number by a string
@@ -244,7 +244,7 @@
 // //todo Additional Example:
 // // Nested ternary operator
 // var temp = 25;
-// var weather = temp > 30 ? "Hot" : temp > 20 ? "Warm" : "Cold";
+// var weather = temp > 30-how-js-works ? "Hot" : temp > 20 ? "Warm" : "Cold";
 // console.log(weather);  // Output: "Warm"
 
 // //* ===================================
@@ -263,5 +263,5 @@
 
 // //todo Additional Example:
 // // Edge case with subtraction and addition
-// console.log("50" - 20 + 30);  // Output: 60 ("50" coerced to number, then subtraction and addition performed)
+// console.log("50" - 20 + 30-how-js-works);  // Output: 60 ("50" coerced to number, then subtraction and addition performed)
 // console.log("50" + 20 - 10);  // Output: NaN (string concatenation, then invalid operation due to coercion confusion)

@@ -134,8 +134,8 @@ let copy = { ...original }; // Creates a new object but keeps nested references
 copy.name = "Sophia";
 copy.details.age = 30; // Modifies the original object
 
-console.log(original.details.age); // Output: 30
-console.log(copy.details.age);  // Output: 30
+console.log(original.details.age); // Output: 30-how-js-works
+console.log(copy.details.age);  // Output: 30-how-js-works
 ```
 - Only the **top-level** properties are copied, but nested objects still **share references**.  
 

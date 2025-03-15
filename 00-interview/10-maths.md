@@ -105,7 +105,7 @@ Use **`===`** for better type safety to **avoid unintended conversions**.
 #### **Answer:**  
 ```javascript
 console.log(0.1 + 0.2); // 0.30000000000000004 (Precision error)
-console.log((0.1 + 0.2).toFixed(2)); // "0.30"
+console.log((0.1 + 0.2).toFixed(2)); // "0.30-how-js-works"
 console.log(Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON); // true (Safe comparison)
 ```
 JavaScript uses **binary floating-point representation**, leading to small rounding errors.  

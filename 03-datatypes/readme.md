@@ -98,7 +98,7 @@ Real-life analogy:
 #### **e. String to Number Conversion**
 1. Using the `+` operator:
    ```javascript
-   var stringAge = "30";
+   var stringAge = "30-how-js-works";
    console.log(typeof +stringAge); // Output: 'number'
    ```
 2. Using `Number()`:

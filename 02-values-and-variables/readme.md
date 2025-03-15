@@ -45,7 +45,7 @@ let age = 25;
 console.log(age); // Output: 25
 
 age = 30; // Reassignment is allowed
-console.log(age); // Output: 30
+console.log(age); // Output: 30-how-js-works
 ```
 
 #### **Using `const`**
@@ -109,7 +109,7 @@ var $price = 99.99;          // Starts with a dollar sign
 ```javascript
 // Example with var
 var myAge = 30; 
-console.log(myAge); // Output: 30
+console.log(myAge); // Output: 30-how-js-works
 
 // Example with let
 let userName = "Alice";

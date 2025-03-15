@@ -452,7 +452,7 @@ for (let key in person) {
 ```javascript
 const numbers = [10, 20, 30];
 for (let num of numbers) {
-    console.log(num); // 10, 20, 30
+    console.log(num); // 10, 20, 30-how-js-works
 }
 ```
 

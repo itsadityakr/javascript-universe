@@ -125,7 +125,7 @@
 ### 11. Why does `0.1 + 0.2 !== 0.3` in JavaScript? How can this be fixed?  
 #### JavaScript cannot represent 0.1 and 0.2 exactly in binary. Fix it using `.toFixed()` or `Number.EPSILON`.  
    ```js
-   console.log((0.1 + 0.2).toFixed(2)); // "0.30"
+   console.log((0.1 + 0.2).toFixed(2)); // "0.30-how-js-works"
    console.log(Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON); // true
    ```
 
