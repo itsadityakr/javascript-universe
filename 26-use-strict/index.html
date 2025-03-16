@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding "use strict" in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .test-section {
+            text-align: left;
+            margin: 20px 0;
+            padding: 15px;
+            background: #eef;
+            border-left: 5px solid #007BFF;
+            border-radius: 5px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            background: #007BFF;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        code {
+            display: block;
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            text-align: left;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            min-height: 50px;
+            background: #eef;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Understanding "use strict" in JavaScript</h1>
+        <p>This interactive page helps you understand the effects of JavaScript's strict mode by running different test cases.</p>
+        
+        <div class="test-section">
+            <h3>Global Strict Mode</h3>
+            <code>"use strict";
+try {
+    undeclaredVar = 10;
+} catch (e) {
+    console.log(e.message);
+}</code>
+            <button onclick="testGlobalStrict()">Run Test</button>
+        </div>
+
+        <div class="test-section">
+            <h3>Function-Level Strict Mode</h3>
+            <code>function strictFunction() {
+    "use strict";
+    try {
+        y = 20;
+    } catch (e) {
+        console.log(e.message);
+    }
+}
+strictFunction();</code>
+            <button onclick="testFunctionStrict()">Run Test</button>
+        </div>
+
+        <div class="test-section">
+            <h3>Duplicate Object Property</h3>
+            <code>const obj = { name: "Alice", name: "Bob" };</code>
+            <button onclick="testDuplicateProperty()">Run Test</button>
+        </div>
+
+        <div class="test-section">
+            <h3>Duplicate Function Parameters</h3>
+            <code>function dup(a, a) {
+    "use strict";
+    return a;
+}</code>
+            <button onclick="testDuplicateParams()">Run Test</button>
+        </div>
+
+        <div class="test-section">
+            <h3>`this` in Function</h3>
+            <code>function checkThis() {
+    "use strict";
+    console.log(this);
+}
+checkThis();</code>
+            <button onclick="testThisInFunction()">Run Test</button>
+        </div>
+
+        <div class="test-section">
+            <h3>Eval in Strict Mode</h3>
+            <code>eval("var z = 30;");
+console.log(typeof z);</code>
+            <button onclick="testEvalStrict()">Run Test</button>
+        </div>
+
+        <div class="test-section">
+            <h3>Read-Only Property</h3>
+            <code>const obj = {};
+Object.defineProperty(obj, "name", { value: "Alice", writable: false });
+obj.name = "Bob";</code>
+            <button onclick="testReadOnlyProperty()">Run Test</button>
+        </div>
+
+        <div class="test-section">
+            <h3>Check if Strict Mode is Enabled</h3>
+            <code>function isStrict() {
+    return (function() { return !this; })();
+}
+console.log(isStrict());</code>
+            <button onclick="testStrictModeCheck()">Run Test</button>
+        </div>
+        
+        <button onclick="clearOutput()">Clear Output</button>
+        
+        <h3>Test Output</h3>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        "use strict";
+        function logOutput(msg, type = "") {
+            const outputDiv = document.getElementById('output');
+            const message = document.createElement("p");
+            message.innerHTML = msg;
+            message.className = type;
+            outputDiv.appendChild(message);
+        }
+        
+        function clearOutput() {
+            document.getElementById('output').innerHTML = "";
+        }
+
+        function testGlobalStrict() {
+            try {
+                undeclaredVar = 10;
+            } catch (e) {
+                logOutput("❌ Global strict mode: " + e.message, "error");
+            }
+        }
+        
+        function testFunctionStrict() {
+            function strictFunction() {
+                "use strict";
+                try {
+                    y = 20;
+                } catch (e) {
+                    logOutput("❌ Function strict mode: " + e.message, "error");
+                }
+            }
+            strictFunction();
+        }
+
+        function testDuplicateProperty() {
+            try {
+                const obj = { name: "Alice", name: "Bob" };
+            } catch (e) {
+                logOutput("❌ Duplicate property: " + e.message, "error");
+            }
+        }
+
+        function testDuplicateParams() {
+            try {
+                eval("function dup(a, a) { 'use strict'; return a; }");
+            } catch (e) {
+                logOutput("❌ Duplicate parameters: " + e.message, "error");
+            }
+        }
+
+        function testThisInFunction() {
+            function checkThis() {
+                "use strict";
+                logOutput("✅ this in function: " + (this === undefined ? "undefined" : this), "success");
+            }
+            checkThis();
+        }
+
+        function testEvalStrict() {
+            try {
+                eval("var z = 30;");
+                logOutput("✅ Eval strict mode: z is not accessible globally", "success");
+            } catch (e) {
+                logOutput("❌ Eval strict mode: " + e.message, "error");
+            }
+        }
+    </script>
+</body>
+</html>
