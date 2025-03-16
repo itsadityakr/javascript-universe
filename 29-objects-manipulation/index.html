@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects - Methods & Interview Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Objects - Useful Methods</h1>
+        <p>An object is a collection of properties, where each property has a key and a value.</p>
+        <h2>Example Object:</h2>
+        <pre>
+const product = {
+    id: 1,
+    name: "Laptop",
+    category: "Computers",
+    brand: "ExampleBrand",
+    price: 999.99,
+    stock: 50
+};
+        </pre>
+
+        <h2>Try Object Methods</h2>
+        <button onclick="showKeys()">Object.keys()</button>
+        <button onclick="showValues()">Object.values()</button>
+        <button onclick="showEntries()">Object.entries()</button>
+        <button onclick="checkProperty()">Object.hasOwnProperty()</button>
+        <button onclick="addProperty()">Add Property</button>
+        <button onclick="modifyProperty()">Modify Property</button>
+        <button onclick="removeProperty()">Remove Property</button>
+        <p><strong>Output:</strong></p>
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        let product = {
+            id: 1,
+            name: "Laptop",
+            category: "Computers",
+            brand: "ExampleBrand",
+            price: 999.99,
+            stock: 50
+        };
+
+        function showKeys() {
+            document.getElementById('output').textContent = JSON.stringify(Object.keys(product), null, 2);
+        }
+
+        function showValues() {
+            document.getElementById('output').textContent = JSON.stringify(Object.values(product), null, 2);
+        }
+
+        function showEntries() {
+            document.getElementById('output').textContent = JSON.stringify(Object.entries(product), null, 2);
+        }
+
+        function checkProperty() {
+            let hasProperty = product.hasOwnProperty("price");
+            document.getElementById('output').textContent = hasProperty ? "Property exists" : "Property does not exist";
+        }
+
+        function addProperty() {
+            product.warranty = "2 years";
+            document.getElementById('output').textContent = JSON.stringify(product, null, 2);
+        }
+
+        function modifyProperty() {
+            product.price = 899.99;
+            document.getElementById('output').textContent = JSON.stringify(product, null, 2);
+        }
+
+        function removeProperty() {
+            delete product.stock;
+            document.getElementById('output').textContent = JSON.stringify(product, null, 2);
+        }
+    </script>
+</body>
+</html>

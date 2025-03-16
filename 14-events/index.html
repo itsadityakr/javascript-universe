@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+        }
+        .box {
+            width: 120px;
+            height: 120px;
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+        .active {
+            background-color: yellow;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+        input {
+            padding: 8px;
+            margin-top: 5px;
+            width: 100%;
+        }
+        .notes-container {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e9ecef;
+            min-height: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>JavaScript Event Handling Examples</h2>
+
+        <!-- 1. Inline Event Handling -->
+        <div class="section">
+            <h3>1️⃣ Inline Event Handling (onclick)</h3>
+            <p>This is the simplest way to handle events. The event is written directly inside the HTML element using the <code>onclick</code> attribute.</p>
+            <button class="btn-primary" onclick="alert('Button clicked!')">Click Me (Inline)</button>
+        </div>
+
+        <!-- 2. DOM Event Handling -->
+        <div class="section">
+            <h3>2️⃣ DOM Event Handling</h3>
+            <p>Here, JavaScript assigns an event handler directly to a DOM element using <code>document.getElementById().onclick</code>.</p>
+            <button id="domButton" class="btn-primary">Click Me (DOM)</button>
+        </div>
+
+        <!-- 3. addEventListener -->
+        <div class="section">
+            <h3>3️⃣ addEventListener</h3>
+            <p>The recommended method to handle events. It allows multiple event listeners on the same element.</p>
+            <button id="eventListenerButton" class="btn-primary">Click Me (addEventListener)</button>
+        </div>
+
+        <!-- 4. Input Events -->
+        <div class="section">
+            <h3>4️⃣ Input Events</h3>
+            <p>The <code>input</code> event fires every time the user types something, while the <code>change</code> event fires when the input loses focus.</p>
+            <input type="text" id="textInput" placeholder="Type here...">
+        </div>
+
+        <!-- 5. Mouse Events -->
+        <div class="section">
+            <h3>5️⃣ Mouse Events</h3>
+            <p>Events triggered when the user interacts with the mouse, such as <code>mouseenter</code> and <code>mouseleave</code>.</p>
+            <div class="box" id="mouseBox">Hover Me</div>
+        </div>
+
+        <!-- 6. Keyboard Events -->
+        <div class="section">
+            <h3>6️⃣ Keyboard Events</h3>
+            <p>The <code>keydown</code> event fires when a key is pressed, and <code>keyup</code> fires when the key is released.</p>
+            <input type="text" id="keyboardInput" placeholder="Press any key">
+        </div>
+
+        <!-- 7. Class Manipulation -->
+        <div class="section">
+            <h3>7️⃣ classList.add()</h3>
+            <p>Used to add or remove CSS classes dynamically using JavaScript.</p>
+            <button id="classListButton" class="btn-primary">Toggle Class</button>
+        </div>
+
+        <!-- 8. Style Manipulation -->
+        <div class="section">
+            <h3>8️⃣ document.getElementById().style</h3>
+            <p>Allows direct manipulation of an element’s style properties.</p>
+            <button id="styleButton" class="btn-danger">Change Box Color</button>
+        </div>
+
+        <!-- 9. Real-Time Notes App -->
+        <div class="section">
+            <h3>9️⃣ Real-Time Input Event (Notes Example)</h3>
+            <p>Whatever you type in the input field will be displayed below in real time.</p>
+            <input type="text" id="noteInput" placeholder="Type your note here">
+            <div class="notes-container" id="notesContainer"></div>
+        </div>
+
+    </div>
+
+    <script>
+        // 2. DOM Event Handling
+        document.getElementById("domButton").onclick = function() {
+            alert('DOM Button clicked!');
+        };
+
+        // 3. addEventListener Example
+        document.getElementById("eventListenerButton").addEventListener("click", function() {
+            alert('Event Listener Button clicked!');
+        });
+
+        // 4. Input Events
+        const textInput = document.getElementById("textInput");
+        textInput.addEventListener("input", (event) => {
+            console.log("Input value:", event.target.value);
+        });
+
+        textInput.addEventListener("change", (event) => {
+            console.log("Value changed:", event.target.value);
+        });
+
+        // 5. Mouse Events
+        const mouseBox = document.getElementById("mouseBox");
+        mouseBox.addEventListener("mouseenter", () => {
+            mouseBox.style.backgroundColor = "yellow";
+        });
+        mouseBox.addEventListener("mouseleave", () => {
+            mouseBox.style.backgroundColor = "lightgray";
+        });
+
+        // 6. Keyboard Events
+        document.getElementById("keyboardInput").addEventListener("keydown", (event) => {
+            console.log("Key pressed:", event.key);
+        });
+
+        // 7. classList.add Example
+        document.getElementById("classListButton").addEventListener("click", () => {
+            mouseBox.classList.toggle("active");
+        });
+
+        // 8. Style Manipulation
+        document.getElementById("styleButton").addEventListener("click", () => {
+            mouseBox.style.backgroundColor = "blue";
+        });
+
+        // 9. Notes Example (Real-Time Text Update)
+        const noteInput = document.getElementById("noteInput");
+        const notesContainer = document.getElementById("notesContainer");
+
+        noteInput.addEventListener("input", (event) => {
+            notesContainer.textContent = event.target.value;
+        });
+    </script>
+
+</body>
+</html>

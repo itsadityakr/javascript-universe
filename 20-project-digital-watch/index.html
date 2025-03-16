@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Digital Clock</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background: linear-gradient(
+                    45deg,
+                    #ff6a00,
+                    #ee0979
+                ); /* Gradient background */
+                font-family: "Arial", sans-serif;
+                overflow: hidden;
+            }
+
+            .maindiv {
+                text-align: center;
+                background-color: rgba(
+                    0,
+                    0,
+                    0,
+                    0.5
+                ); /* Semi-transparent background */
+                padding: 40px 60px;
+                border-radius: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            #clock {
+                font-size: 80px; /* Larger font size */
+                font-weight: 700;
+                color: #fff;
+                text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Glowing effect */
+                letter-spacing: 5px;
+                animation: pulse 1.5s ease-in-out infinite; /* Pulse animation */
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.1);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="maindiv">
+            <p id="clock"></p>
+        </div>
+    </body>
+    <script>
+        function updateClock() {
+            let now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+
+            // Format hours, minutes, and seconds to ensure they are always two digits
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            // Display time in the clock element
+            document.getElementById(
+                "clock"
+            ).textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Update the clock every second
+        setInterval(updateClock, 1000);
+
+        // Call the function once immediately to show the time right away
+        updateClock();
+    </script>
+</html>

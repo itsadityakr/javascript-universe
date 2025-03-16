@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pass by Value vs Pass by Reference</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .example {
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #f9f9f9;
+    }
+    button {
+      padding: 10px 15px;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    pre {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .output {
+      margin-top: 10px;
+      padding: 10px;
+      background: #ecf0f1;
+      border-radius: 5px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pass by Value vs Pass by Reference in JavaScript</h1>
+
+    <!-- Pass by Value Example -->
+    <div class="example">
+      <h2>Pass by Value (Primitive Data Types)</h2>
+      <p>Primitive data types (like numbers, strings, booleans) are passed by value. Changes to the copied value do not affect the original.</p>
+      <pre><code>
+let a = 10;
+let b = a; // b gets a copy of a's value
+b = 20;    // Changing b does not affect a
+      </code></pre>
+      <button onclick="runPassByValue()">Run Example</button>
+      <div class="output" id="passByValueOutput"></div>
+    </div>
+
+    <!-- Pass by Reference Example -->
+    <div class="example">
+      <h2>Pass by Reference (Objects, Arrays, Functions)</h2>
+      <p>Objects, arrays, and functions are passed by reference. Changes to the copied reference affect the original object.</p>
+      <pre><code>
+let obj1 = { name: "Alice" };
+let obj2 = obj1; // obj2 references the same object as obj1
+obj2.name = "Bob"; // Changing obj2 affects obj1
+      </code></pre>
+      <button onclick="runPassByReference()">Run Example</button>
+      <div class="output" id="passByReferenceOutput"></div>
+    </div>
+
+    <!-- Comparison by Reference Example -->
+    <div class="example">
+      <h2>Comparison by Reference</h2>
+      <p>When comparing objects or arrays, JavaScript compares their memory addresses, not their values.</p>
+      <pre><code>
+let obj1 = { name: "Alice" };
+let obj2 = { name: "Alice" };
+console.log(obj1 === obj2); // false (different memory addresses)
+      </code></pre>
+      <button onclick="runComparisonByReference()">Run Example</button>
+      <div class="output" id="comparisonByReferenceOutput"></div>
+    </div>
+  </div>
+
+  <script>
+    // Pass by Value Example
+    function runPassByValue() {
+      let a = 10;
+      let b = a; // b gets a copy of a's value
+      b = 20;    // Changing b does not affect a
+
+      const output = `
+        Original value of a: ${a} <br>
+        Value of b after change: ${b}
+      `;
+      document.getElementById('passByValueOutput').innerHTML = output;
+    }
+
+    // Pass by Reference Example
+    function runPassByReference() {
+      let obj1 = { name: "Alice" };
+      let obj2 = obj1; // obj2 references the same object as obj1
+      obj2.name = "Bob"; // Changing obj2 affects obj1
+
+      const output = `
+        Original obj1.name: ${obj1.name} <br>
+        obj2.name after change: ${obj2.name}
+      `;
+      document.getElementById('passByReferenceOutput').innerHTML = output;
+    }
+
+    // Comparison by Reference Example
+    function runComparisonByReference() {
+      let obj1 = { name: "Alice" };
+      let obj2 = { name: "Alice" };
+      const result = obj1 === obj2; // false (different memory addresses)
+
+      const output = `
+        obj1 === obj2: ${result} <br>
+        Explanation: obj1 and obj2 have the same content but different memory addresses.
+      `;
+      document.getElementById('comparisonByReferenceOutput').innerHTML = output;
+    }
+  </script>
+</body>
+</html>

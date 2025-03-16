@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage and JSON Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>localStorage and JSON - Demo</h1>
+        
+        <button class="button" onclick="saveData()">Save Data</button>
+        <button class="button" onclick="loadData()">Load Data</button>
+        <button class="button" onclick="clearData()">Clear Data</button>
+
+        <div class="output">
+            <h3>Stored Data:</h3>
+            <p id="user-output">No data saved yet.</p>
+        </div>
+    </div>
+
+    <script>
+        // Example user object
+        const user = {
+            name: 'John',
+            age: 25,
+            city: 'New York',
+            hobbies: ['reading', 'gaming']
+        };
+
+        // Save user object to localStorage
+        function saveData() {
+            // Convert the object to a string and save it
+            localStorage.setItem('user', JSON.stringify(user));
+            alert('User data saved!');
+        }
+
+        // Load user object from localStorage
+        function loadData() {
+            // Get the stored user data
+            const storedUserString = localStorage.getItem('user');
+            if (storedUserString) {
+                const storedUser = JSON.parse(storedUserString);
+                // Display the user data
+                document.getElementById('user-output').textContent = 
+                    `Name: ${storedUser.name}, Age: ${storedUser.age}, City: ${storedUser.city}, Hobbies: ${storedUser.hobbies.join(', ')}`;
+            } else {
+                document.getElementById('user-output').textContent = 'No data found!';
+            }
+        }
+
+        // Clear user data from localStorage
+        function clearData() {
+            localStorage.removeItem('user');
+            document.getElementById('user-output').textContent = 'No data saved yet.';
+            alert('User data cleared!');
+        }
+    </script>
+
+</body>
+</html>

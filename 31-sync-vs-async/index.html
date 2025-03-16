@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronous vs Asynchronous JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; padding: 20px; }
+        h1 { color: #333; }
+        .container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .box { width: 45%; min-width: 300px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+        .sync-box { background-color: #ff7675; color: white; }
+        .async-box { background-color: #74b9ff; color: white; }
+        button { margin-top: 10px; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        .sync-btn { background-color: #d63031; color: white; }
+        .async-btn { background-color: #0984e3; color: white; }
+        button:hover { opacity: 0.8; }
+        .output-box { margin-top: 10px; padding: 10px; background: white; color: black; border-radius: 5px; min-height: 60px; }
+    </style>
+</head>
+<body>
+    <h1>Synchronous vs Asynchronous JavaScript</h1>
+    <p><strong>Synchronous:</strong> Tasks happen one after another, blocking execution.</p>
+    <p><strong>Asynchronous:</strong> Some tasks run in the background, allowing other tasks to continue.</p>
+
+    <div class="container">
+        <!-- Synchronous Example -->
+        <div class="box sync-box">
+            <h2>Synchronous Execution</h2>
+            <button class="sync-btn" onclick="runSync()">Run Synchronous Code</button>
+            <div class="output-box" id="syncOutput"></div>
+        </div>
+        
+        <!-- Asynchronous Example -->
+        <div class="box async-box">
+            <h2>Asynchronous Execution</h2>
+            <button class="async-btn" onclick="runAsync()">Run Asynchronous Code</button>
+            <div class="output-box" id="asyncOutput"></div>
+        </div>
+    </div>
+    
+    <script>
+        function runSync() {
+            let output = document.getElementById('syncOutput');
+            output.innerHTML = "";
+            
+            output.innerHTML += "<p>Step 1: Start Cooking</p>";
+            for (let i = 0; i < 1e9; i++) {} // Simulated delay
+            
+            output.innerHTML += "<p>Step 2: Chop Vegetables</p>";
+            for (let i = 0; i < 1e9; i++) {} // Simulated delay
+            
+            output.innerHTML += "<p>Step 3: Serve Food</p>";
+        }
+
+        function runAsync() {
+            let output = document.getElementById('asyncOutput');
+            output.innerHTML = "";
+
+            output.innerHTML += "<p>Step 1: Order Pizza</p>";
+
+            setTimeout(() => {
+                output.innerHTML += "<p>Step 2: Pizza Delivered</p>";
+            }, 3000); // Simulated delay
+            
+            output.innerHTML += "<p>Step 3: Drink Water</p>";
+        }
+    </script>
+</body>
+</html>

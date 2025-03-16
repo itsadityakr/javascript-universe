@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Advanced Calculator</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f4f4f9;
+                margin: 0;
+            }
+            .calculator {
+                background-color: #fff;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            }
+            .screen {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .input-display,
+            .result-display {
+                width: 48%;
+                height: 80px;
+                background-color: #333;
+                color: rgba(255, 255, 255, 1); /* Start with 50% opacity */
+                border-radius: 5px;
+                text-align: right;
+                padding: 10px;
+                font-size: 2rem;
+                overflow-x: auto;
+            }
+            .buttons {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+            .button {
+                padding: 20px;
+                background-color: #f4f4f9;
+                border: none;
+                font-size: 1.5rem;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            .button:hover {
+                background-color: #d9d9d9;
+            }
+            .button:active {
+                background-color: #ccc;
+            }
+            .button.special {
+                background-color: #ff8c00;
+                color: white;
+            }
+            .result-display {
+                transition: color 0.3s; /* Smooth transition for color change */
+                margin-left: 10px;
+            }
+            #result {
+                color: rgba(255, 255, 255, 0.3);
+            }
+            .button-sim {
+                background: linear-gradient(90deg, #224abe, #4e73df);
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="calculator">
+            <div class="screen">
+                <div class="input-display" id="input">0</div>
+                <div class="result-display" id="result">0</div>
+            </div>
+            <div class="buttons">
+                <button class="button special" id="AC">AC</button>
+                <button class="button special" id="backspace">←</button>
+                <button class="button special" id="pow">x^y</button>
+                <button class="button special" id="sqrt">√</button>
+
+                <button class="button" id="7">7</button>
+                <button class="button" id="8">8</button>
+                <button class="button" id="9">9</button>
+                <button class="button special" id="log2">log₂</button>
+
+                <button class="button" id="4">4</button>
+                <button class="button" id="5">5</button>
+                <button class="button" id="6">6</button>
+                <button class="button special" id="log10">log₁₀</button>
+
+                <button class="button" id="1">1</button>
+                <button class="button" id="2">2</button>
+                <button class="button" id="3">3</button>
+                <button class="button special" id="rad2deg">Rad → Deg</button>
+
+                <button class="button special" id="factorial">n!</button>
+                <button class="button" id="0">0</button>
+                <button class="button special" id="decimal">.</button>
+                <button class="button special" id="deg2rad">Deg → Rad</button>
+
+                <button class="button special" id="openParen">(</button>
+                <button class="button special" id="closeParen">)</button>
+                <button class="button special" id="equal">=</button>
+
+                <!-- Adding basic operations buttons -->
+                <button class="button button-sim" id="add">+</button>
+                <button class="button button-sim" id="subtract">-</button>
+                <button class="button button-sim" id="multiply">×</button>
+                <button class="button button-sim" id="divide">÷</button>
+                <button class="button button-sim" id="percent">%</button>
+            </div>
+        </div>
+
+        <script>
+            let currentInput = "";
+            let result = null;
+
+            const inputDisplay = document.getElementById("input");
+            const resultDisplay = document.getElementById("result");
+
+            const buttons = document.querySelectorAll(".button");
+            buttons.forEach((button) => {
+                button.addEventListener("click", handleButtonClick);
+            });
+
+            function handleButtonClick(event) {
+                const value = event.target.textContent;
+
+                if (value === "AC") {
+                    currentInput = "";
+                    result = null;
+                    updateScreen("0");
+                } else if (value === "←") {
+                    currentInput = currentInput.slice(0, -1);
+                    if (currentInput === "") {
+                        updateScreen("0");
+                    } else {
+                        updateScreen(currentInput);
+                    }
+                } else if (value === "x^y") {
+                    currentInput += "**";
+                    updateScreen(currentInput);
+                } else if (value === "√") {
+                    currentInput = `Math.sqrt(${currentInput})`;
+                    updateScreen(currentInput);
+                } else if (value === "log₂") {
+                    currentInput = `Math.log2(${currentInput})`;
+                    updateScreen(currentInput);
+                } else if (value === "log₁₀") {
+                    currentInput = `Math.log10(${currentInput})`;
+                    updateScreen(currentInput);
+                } else if (value === "n!") {
+                    currentInput = `factorial(${currentInput})`;
+                    updateScreen(currentInput);
+                } else if (value === "Deg → Rad") {
+                    currentInput = `(${currentInput} * Math.PI) / 180`;
+                    updateScreen(currentInput);
+                } else if (value === "Rad → Deg") {
+                    currentInput = `(${currentInput} * 180) / Math.PI`;
+                    updateScreen(currentInput);
+                } else if (value === "(" || value === ")") {
+                    currentInput += value;
+                    updateScreen(currentInput);
+                } else if (value === ".") {
+                    if (!currentInput.includes(".")) {
+                        currentInput += ".";
+                        updateScreen(currentInput);
+                    }
+                } else if (value === "+") {
+                    currentInput += "+";
+                    updateScreen(currentInput);
+                } else if (value === "-") {
+                    currentInput += "-";
+                    updateScreen(currentInput);
+                } else if (value === "×") {
+                    currentInput += "*";
+                    updateScreen(currentInput);
+                } else if (value === "÷") {
+                    currentInput += "/";
+                    updateScreen(currentInput);
+                } else if (value === "%") {
+                    // Handle percentage operation
+                    currentInput = (parseFloat(currentInput) / 100).toString();
+                    updateScreen(currentInput);
+                } else if (value === "=") {
+                    resultDisplay.style.color = "rgba(255, 255, 255, 1)";
+                } else {
+                    currentInput += value;
+                    updateScreen(currentInput);
+                }
+            }
+
+            function updateScreen(input) {
+                try {
+                    // Handle leading zeros and possible errors
+                    if (
+                        input.startsWith("0") &&
+                        !input.startsWith("0.") &&
+                        input.length > 1
+                    ) {
+                        input = input.slice(1); // Remove leading zeros
+                    }
+
+                    // Evaluate and calculate result
+                    result = eval(input);
+                    inputDisplay.textContent = input; // Update the input display with the current expression
+                    resultDisplay.textContent = result; // Update the result display dynamically
+                } catch (error) {
+                    inputDisplay.textContent = input;
+                    resultDisplay.textContent = "Error";
+                }
+            }
+
+            function factorial(n) {
+                if (n <= 1) return 1;
+                return n * factorial(n - 1);
+            }
+        </script>
+    </body>
+</html>
