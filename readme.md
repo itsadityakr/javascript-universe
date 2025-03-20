@@ -5,7 +5,6 @@
 Welcome to the **JS Universe** repository! This collection of projects and exercises is designed to guide you through the fundamentals of JavaScript, from the basics to advanced topics. Whether you're a beginner or looking to deepen your knowledge, there's something here for everyone.
 
 ## 📂 **Content:**
-
 - [00 - Interview](https://github.com/itsadityakr/javascript-universe/tree/main/00-interview)
 - [01 - Types of JS](https://github.com/itsadityakr/javascript-universe/tree/main/01-types-of-js)
 - [02 - Values and Variables](https://github.com/itsadityakr/javascript-universe/tree/main/02-values-and-variables)
@@ -44,6 +43,56 @@ Welcome to the **JS Universe** repository! This collection of projects and exerc
 - [35 - Scope & Lexical Scoping](https://github.com/itsadityakr/javascript-universe/tree/main/35-scope-lexicalScoping)
 - [36 - Closures](https://github.com/itsadityakr/javascript-universe/tree/main/36-closures)
 - [37 - Heap Memory](https://github.com/itsadityakr/javascript-universe/tree/main/37-heap-memory)
+- [38 - ECMAScript 2015 (ES6)](https://github.com/itsadityakr/javascript-universe/tree/main/38-ecmascript-2015)  
+  - let & const  
+  - Arrow functions  
+  - Template literals  
+  - Classes  
+  - Default parameters  
+  - Destructuring  
+  - Modules (import/export)
+
+- [39 - ECMAScript 2016 (ES7)](https://github.com/itsadityakr/javascript-universe/tree/main/39-ecmascript-2016)  
+  - Exponentiation operator  
+  - Array.prototype.includes  
+
+- [40 - ECMAScript 2017 (ES8)](https://github.com/itsadityakr/javascript-universe/tree/main/40-ecmascript-2017)  
+  - Async/Await  
+  - Object.values() & Object.entries()  
+  - String padding (padStart, padEnd)  
+
+- [41 - ECMAScript 2018 (ES9)](https://github.com/itsadityakr/javascript-universe/tree/main/41-ecmascript-2018)  
+  - Rest/Spread properties  
+  - Promise.prototype.finally()  
+  - Asynchronous iteration  
+
+- [42 - ECMAScript 2019 (ES10)](https://github.com/itsadityakr/javascript-universe/tree/main/42-ecmascript-2019)  
+  - Array.prototype.flat() & flatMap()  
+  - Optional catch binding  
+
+- [43 - ECMAScript 2020 (ES11)](https://github.com/itsadityakr/javascript-universe/tree/main/43-ecmascript-2020)  
+  - Nullish coalescing operator (??)  
+  - Optional chaining (?.)  
+  - BigInt  
+
+- [44 - ECMAScript 2021 (ES12)](https://github.com/itsadityakr/javascript-universe/tree/main/44-ecmascript-2021)  
+  - String.prototype.replaceAll()  
+  - Logical assignment operators  
+
+- [45 - ECMAScript 2022 (ES13)](https://github.com/itsadityakr/javascript-universe/tree/main/45-ecmascript-2022)  
+  - Class fields & static initialization  
+  - at() method for arrays  
+
+- [46 - ECMAScript 2023 (ES14)](https://github.com/itsadityakr/javascript-universe/tree/main/46-ecmascript-2023)  
+  - Array findLast() and findLastIndex()  
+  - Symbol.prototype.description  
+
+- [47 - ECMAScript 2024 (ES15)](https://github.com/itsadityakr/javascript-universe/tree/main/47-ecmascript-2024)  
+  - Object.groupBy() & Map.groupBy()
+  - Promise.withResolvers()
+  - New Set Methods: union(), intersection(), difference(), symmetricDifference()
+  - RegExp 'v' Flag for Enhanced Unicode Support
+
 
 ## 🛠 How to Use
 
